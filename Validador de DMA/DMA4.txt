@@ -1,0 +1,12 @@
+O,P,Q,R
+e,f
+O
+R
+OeP
+OfQ
+PeP
+PfQ
+QeQ
+QfR
+ReR
+RfR

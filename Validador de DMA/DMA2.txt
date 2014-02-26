@@ -1,0 +1,10 @@
+A,B,C
+a,b
+A
+A
+A,a,B
+A,b,C
+B,b,A
+B,a,C
+C,a,C
+C,b,C
