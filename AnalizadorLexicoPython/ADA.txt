@@ -1,5 +1,5 @@
 comienza
-	a:=b3;
+	a:=	b3;
 	xyz := a + b + c
 	-p / q;
 	a := xyz * (p + q);
