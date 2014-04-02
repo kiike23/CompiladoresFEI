@@ -8,9 +8,9 @@ using WindowsFormsApplication1;
 namespace WindowsFormsApplication1
 {
 
-    public class DFA
+    public class EstadoDFA
     {
-       public DFA(int numero, object FTrans, bool aceptacion=false, string catLex= null, bool trampa= false)
+        public EstadoDFA(int numero, object FTrans, bool aceptacion = false, string catLex = null, bool trampa = false)
         {
            
             int num =numero;
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
         /// </summary>
         /// 
         public List<char> alfabeto{get; set;}
-        List<DFA> estados = new List<DFA>();
+       // List<DFA> estados = new List<DFA>();
         List<char> letras = new List<char>();
         List<string> digitos = new List<string>();
         List<string> espacios = new List<string>();
