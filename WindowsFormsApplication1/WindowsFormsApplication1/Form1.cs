@@ -6,6 +6,22 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+    public enum Tokens
+    {
+        Identificador,
+        Entero,
+        OpSuma,
+        OpMult,
+        ParnIzq,
+        ParnDer,
+        FinLinea,
+        Asignacion,
+        Termina,
+        Comienza,
+        EspacioVacio,
+        Error,
+    }
+
     public partial class Form1 : Form
     {
         List<char> alfabeto = new List<char>();
@@ -81,7 +97,7 @@ namespace WindowsFormsApplication1
             
            
         }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -94,7 +110,7 @@ namespace WindowsFormsApplication1
 
             codigo = richTextBox1.Text;
             textBox1.Text = codigo;
-         
+            
         }
         
 
@@ -103,4 +119,102 @@ namespace WindowsFormsApplication1
         
         
     }
+    public class Simbolo
+    {
+        private Tokens token;
+        private Tokens Token { get { return token; } }
+        public Simbolo (Tokens token)
+        {
+            this.token = token;
+        }
+
+    }
+    public class anaLex
+    {
+        private string textoEntrada;
+        private int indice;
+        private List<Simbolo> simbolo = new List<Simbolo>();
+        public anaLex(string textoEntrada)
+        {
+            this.textoEntrada = textoEntrada;
+            indice = 0;
+        }
+
+        private char GetCaracter
+        {
+            get {
+                char c;
+                try
+                {
+                    c = textoEntrada[indice];
+                    indice++;
+                }
+                catch(Exception)
+                {
+                    c= '@';
+                    return c;
+                }
+                return c;
+            }
+        }
+        List<Simbolo> simbolos =new List<Simbolo>();
+        public List<Simbolo> GetSimbolos()
+        {
+            Simbolo simbolo;
+            simbolo=this.GetToken();
+            
+            while(simbolo != Tokens.Termina)
+            {
+                simbolos.Add(simbolo);
+            }
+            return simbolos;
+        }
+
+        public Simbolo GetToken()
+        {
+	        char carActual= GetCaracter;
+
+	        if (indice > textoEntrada.Length || carActual == '@')
+	        return new Simbolo (Tokens.Termina);
+
+	        switch(carActual)
+	        {
+	        case ' ': {break;}
+	        case '\t':{break;}
+	        case '\n':{break;}
+	        case '+': {return new Simbolo (Tokens.OpSuma);}
+	        case '-': {return new Simbolo (Tokens.OpSuma);}
+	        case '*': {return new Simbolo (Tokens.OpMult);}
+	        case '/': {return new Simbolo (Tokens.OpMult);}
+	        case '(': {return new Simbolo (Tokens.ParnIzq);}
+	        case ')': {return new Simbolo (Tokens.ParnDer);}
+	        //case : {return new Simbolo (Tokens.Entero);}
+
+	        default:
+	        {
+			        if(Char.IsDigit(carActual))
+			        {
+				        while (Char.IsDigit(carActual))
+					        carActual=GetCaracter;
+					        if(indice<textoEntrada.Length && carActual!='@')
+						        indice--; 
+                        return new Simbolo(Tokens.Entero);
+			        }
+			        else if(Char.IsLetter(carActual))
+			        {
+				        while (Char.IsLetter(carActual)||
+				        Char.IsDigit(carActual))
+				        carActual=GetCaracter;
+				        if(indice<textoEntrada.Length && carActual!='@') indice--;
+					        return new Simbolo(Tokens.Identificador);
+			        }
+			        else
+				        return new Simbolo(Tokens.Error);
+	        }
+	        }
+			        return new Simbolo(Tokens.EspacioVacio);
+        }
+    }
 }
+
+

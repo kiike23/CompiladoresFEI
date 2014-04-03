@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="anaLex.cs" />
     <Compile Include="DFA.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
