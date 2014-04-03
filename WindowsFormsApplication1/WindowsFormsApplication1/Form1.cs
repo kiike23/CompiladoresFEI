@@ -11,9 +11,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         List<char> alfabeto = new List<char>();
-        List<WindowsFormsApplication1.anaLex.Simbolo> simbolos = new List<WindowsFormsApplication1.anaLex.Simbolo>();
-        //List<EstadosDFA> estados = new List<EstadosDFA>();
-
+       
  
         int inicial = 0, indice;
         
@@ -52,13 +50,16 @@ namespace WindowsFormsApplication1
                 n = Convert.ToString(i);
                 alfabeto.Add(m = Convert.ToChar(n));
             }
-
+           
             alfabeto.Add(m = Convert.ToChar("\v"));
             alfabeto.Add(m = Convert.ToChar("\f"));
-            alfabeto.Add(m = Convert.ToChar("("));
-            alfabeto.Add(m = Convert.ToChar(")"));
+            alfabeto.Add(m = Convert.ToChar(" "));
             alfabeto.Add(m = Convert.ToChar("\n"));
             alfabeto.Add(m = Convert.ToChar("\t"));
+            
+             
+            alfabeto.Add(m = Convert.ToChar("("));
+            alfabeto.Add(m = Convert.ToChar(")"));
             alfabeto.Add(m = Convert.ToChar("+"));
             alfabeto.Add(m = Convert.ToChar("-"));
             alfabeto.Add(m = Convert.ToChar("/"));
@@ -97,31 +98,7 @@ namespace WindowsFormsApplication1
             codigo = richTextBox1.Text;
             
             comprobar();
-            /**
-            WindowsFormsApplication1.anaLex.Lex l = new WindowsFormsApplication1.anaLex.Lex(codigo,simbolos);
-
-            foreach (WindowsFormsApplication1.anaLex.Simbolo s in l.GetSimbolos())
-            {
-
-                switch ((int) s.Token)
-                {
-
-                    case (int)Tokens.IDENT: { listBox1.Items.Add("IDENTIFICADOR"); break; }
-
-                    case (int)Tokens.OPERADD: { listBox1.Items.Add("OPERADD"); break; }
-
-                    case (int)Tokens.OPERMUL: { listBox1.Items.Add("OPERMUL"); break; }
-
-                    case (int)Tokens.NUMEINT: { listBox1.Items.Add("NUMEINT"); break; }
-
-                    case (int)Tokens.OPERAGRU: { listBox1.Items.Add("OPERAGRU"); break; }
-
-                    case (int)Tokens.ERROR: { listBox1.Items.Add("ERROR"); break; }
             
-                }
-            
-            }
-             */
         }
 
         public char GetCaracter()
@@ -151,7 +128,7 @@ namespace WindowsFormsApplication1
             char cActual;
             indice =0;
             limpiarListbox();
-            bool b = false;
+            bool b = true;
 
 
             while (indice<codigo.Length)
@@ -165,13 +142,16 @@ namespace WindowsFormsApplication1
                 {
                     if (alfabeto.Contains( cActual))
                     {
-                        b = true;
+                        //b = true;
                         continue;
                     }
                     else
                     {
                         b = false;
-                        listBox1.Items.Add(cActual + "\tEs un caracter no valido");
+                        if ((cActual != '\t') || (cActual != '\n') || (cActual != '\v') || (cActual != '\f'))
+                        {
+                            listBox1.Items.Add(cActual + "\tEs un caracter no valido");
+                        }
                     }
                 }
             }
@@ -186,6 +166,11 @@ namespace WindowsFormsApplication1
                 
                     
                         
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
