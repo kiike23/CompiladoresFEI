@@ -1,0 +1,53 @@
+2	Suma y Asigna	+=
+3	Suma	+
+4	Incremento	++
+6	Resta y Asigna	-=
+7	Resta	-
+8	Decremento	--
+10	Multiplica y Asigna	*=
+11	Multiplica	*
+12	Fin de Comentario	*/
+14	Divide	/
+15	Divide y Asina	/=
+17	Comentario de línea	//
+21	Cometario	/*
+23	Identico	==
+24	Asigna	=
+26	Diferente	!=
+27	Negacion	!
+29	Modulo y Asigna	%=
+30	Modulo	%
+32	Menor e igual que 	<=
+33	Menor que	<
+35	Desplazamiento de bit Izquierda	<<
+36	Desplaz Izquierda y Asigna	<<=
+38	Mayor e igual que	>=
+39	Mayor que	>
+41	Desplazamiento de bit derecha	>>
+42	Desplaz Derecha y Asigna	>>=
+44	Potencia y Asigna	^=
+45	Potencia	^
+48	Or	||
+49	Pipe	|
+52	Ampersand	&
+53	And	&&
+55	Corchete Izquierdo	]
+57	Corchete Derecho	[
+59	Parentesis Izquierdo	(
+61	Parentesis Derecho	)
+63	Llave izquierda	{
+65	Lave derecha	}
+68	Texto	""
+70	Punto y coma	;
+72	Coma	,
+74	Gatito	#
+76	Espacio	''
+78	Guion Bajo	_
+80	Comillas Simples	'
+82	Punto	.
+84	Identificador	id
+85	Objeto	Obj
+89	Numero Real	N.R
+90	Numero Entero	NE
+92	Nueva Linea	\n
+94	Dos Puntos	:

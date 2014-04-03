@@ -1,0 +1,15 @@
+using System;
+
+namespace Lexico
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			Console.WriteLine ("Analizador Léxico!\n");
+			AnalizadorLexico alx = new AnalizadorLexico();
+			alx.Escanear("Ejemplo1.cs");
+
+		}
+	}
+}

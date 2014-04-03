@@ -1,0 +1,5 @@
+C:\Users\StarKiller\Desktop\lexC#\Lexico\Lexico\bin\Debug\Lexico.exe
+C:\Users\StarKiller\Desktop\lexC#\Lexico\Lexico\bin\Debug\Lexico.pdb
+C:\Users\StarKiller\Desktop\lexC#\Lexico\Lexico\obj\x86\Debug\Lexico.csprojResolveAssemblyReference.cache
+C:\Users\StarKiller\Desktop\lexC#\Lexico\Lexico\obj\x86\Debug\Lexico.exe
+C:\Users\StarKiller\Desktop\lexC#\Lexico\Lexico\obj\x86\Debug\Lexico.pdb
