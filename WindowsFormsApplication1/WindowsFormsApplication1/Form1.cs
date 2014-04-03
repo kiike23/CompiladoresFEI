@@ -6,40 +6,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public class Simbolo
-    {
-        private Tokens token;
-        private Tokens Token { get { return token; } }
-        public Simbolo(Tokens token)
-        {
-            this.token = token;
-        }
-
-    }
-    public enum Tokens
-    {
-        Identificador,
-        Entero,
-        OpSuma,
-        OpMult,
-        ParnIzq,
-        ParnDer,
-        FinLinea,
-        Asignacion,
-        Termina,
-        Comienza,
-        EspacioVacio,
-        Error,
-    }
+    
 
     public partial class Form1 : Form
     {
         List<char> alfabeto = new List<char>();
-        List<Simbolo> simbolos = new List<Simbolo>();
+        List<WindowsFormsApplication1.anaLex.Simbolo> simbolos = new List<WindowsFormsApplication1.anaLex.Simbolo>();
         //List<EstadosDFA> estados = new List<EstadosDFA>();
 
  
-        int inicial = 0;
+        int inicial = 0, indice;
         
         public Form1()
         {
@@ -77,13 +53,19 @@ namespace WindowsFormsApplication1
                 alfabeto.Add(m = Convert.ToChar(n));
             }
 
-            alfabeto.Add(m = Convert.ToChar(" "));
+            alfabeto.Add(m = Convert.ToChar("\v"));
+            alfabeto.Add(m = Convert.ToChar("\f"));
+            alfabeto.Add(m = Convert.ToChar("("));
+            alfabeto.Add(m = Convert.ToChar(")"));
             alfabeto.Add(m = Convert.ToChar("\n"));
             alfabeto.Add(m = Convert.ToChar("\t"));
             alfabeto.Add(m = Convert.ToChar("+"));
             alfabeto.Add(m = Convert.ToChar("-"));
             alfabeto.Add(m = Convert.ToChar("/"));
             alfabeto.Add(m = Convert.ToChar("*"));
+            alfabeto.Add(m = Convert.ToChar(":"));
+            alfabeto.Add(m = Convert.ToChar("="));
+            alfabeto.Add(m = Convert.ToChar(";"));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,112 +95,104 @@ namespace WindowsFormsApplication1
         {
 
             codigo = richTextBox1.Text;
-            textBox1.Text = codigo;
-            Lex a = new Lex(codigo, simbolos);
-             foreach (Simbolo c in simbolos)
-            {
-                
-                listBox1.Items.Add(c);
-            }
             
+            comprobar();
+            /**
+            WindowsFormsApplication1.anaLex.Lex l = new WindowsFormsApplication1.anaLex.Lex(codigo,simbolos);
+
+            foreach (WindowsFormsApplication1.anaLex.Simbolo s in l.GetSimbolos())
+            {
+
+                switch ((int) s.Token)
+                {
+
+                    case (int)Tokens.IDENT: { listBox1.Items.Add("IDENTIFICADOR"); break; }
+
+                    case (int)Tokens.OPERADD: { listBox1.Items.Add("OPERADD"); break; }
+
+                    case (int)Tokens.OPERMUL: { listBox1.Items.Add("OPERMUL"); break; }
+
+                    case (int)Tokens.NUMEINT: { listBox1.Items.Add("NUMEINT"); break; }
+
+                    case (int)Tokens.OPERAGRU: { listBox1.Items.Add("OPERAGRU"); break; }
+
+                    case (int)Tokens.ERROR: { listBox1.Items.Add("ERROR"); break; }
+            
+                }
+            
+            }
+             */
         }
-        
 
-        
-
-        
-        
-    }
-    
-   
-    public class Lex
-    {
-        private List<Simbolo> simbolos;
-        private string textoEntrada;
-        private int indice;
-        private List<Simbolo> simbolo = new List<Simbolo>();
-        public Lex(string textoEntrada, List<Simbolo> simbolos)
+        public char GetCaracter()
         {
-            this.simbolos = simbolos;
-            this.textoEntrada = textoEntrada;
-            indice = 0;
-        }
-
-        private char GetCaracter
-        {
-            get {
+            
                 char c;
                 try
                 {
-                    c = textoEntrada[indice];
+                    c = codigo[indice];
                     indice++;
                 }
-                catch(Exception)
+                catch (Exception)
                 {
-                    c= '@';
+                    c = '@';
                     return c;
                 }
+
                 return c;
-            }
+            
         }
-        
-        public List<Simbolo> GetSimbolos()
+        public void limpiarListbox()
         {
-            Simbolo simbolo;
-            simbolo = this.GetToken();
+            listBox1.Items.Clear();
+        }
+        public void comprobar()
+        {
+            char cActual;
+            indice =0;
+            limpiarListbox();
+            bool b = false;
 
-            while (true)
+
+            while (indice<codigo.Length)
             {
-                simbolos.Add(simbolo);
+                cActual = GetCaracter();
+                if (indice > codigo.Length)
+                {
+                    break;
+                }
+                else
+                {
+                    if (alfabeto.Contains( cActual))
+                    {
+                        b = true;
+                        continue;
+                    }
+                    else
+                    {
+                        b = false;
+                        listBox1.Items.Add(cActual + "\tEs un caracter no valido");
+                    }
+                }
             }
-            //return simbolos;
-        }
+                if (b == true) { textBox1.Text="Codigo aprobado";}
+                else { textBox1.Text = "Error existen caracteres no validos"; }
+               
+                        
+                    
+                
 
-        public Simbolo GetToken()
-        {
-	        char carActual= GetCaracter;
-
-	        if (indice > textoEntrada.Length || carActual == '@')
-	        return new Simbolo (Tokens.Termina);
-
-	        switch(carActual)
-	        {
-	        case ' ': {break;}
-	        case '\t':{break;}
-	        case '\n':{break;}
-	        case '+': {return new Simbolo (Tokens.OpSuma);}
-	        case '-': {return new Simbolo (Tokens.OpSuma);}
-	        case '*': {return new Simbolo (Tokens.OpMult);}
-	        case '/': {return new Simbolo (Tokens.OpMult);}
-	        case '(': {return new Simbolo (Tokens.ParnIzq);}
-	        case ')': {return new Simbolo (Tokens.ParnDer);}
-	        //case : {return new Simbolo (Tokens.Entero);}
-
-	        default:
-	        {
-			        if(Char.IsDigit(carActual))
-			        {
-				        while (Char.IsDigit(carActual))
-					        carActual=GetCaracter;
-					        if(indice<textoEntrada.Length && carActual!='@')
-						        indice--; 
-                        return new Simbolo(Tokens.Entero);
-			        }
-			        else if(Char.IsLetter(carActual))
-			        {
-				        while (Char.IsLetter(carActual)||
-				        Char.IsDigit(carActual))
-				        carActual=GetCaracter;
-				        if(indice<textoEntrada.Length && carActual!='@') indice--;
-					        return new Simbolo(Tokens.Identificador);
-			        }
-			        else
-				        return new Simbolo(Tokens.Error);
-	        }
-	        }
-			        return new Simbolo(Tokens.EspacioVacio);
+            
+                
+                    
+                        
         }
     }
+
+    
+   
+   
+    
 }
 
 

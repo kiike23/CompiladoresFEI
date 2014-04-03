@@ -1,32 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WindowsFormsApplication1;
-
 namespace WindowsFormsApplication1
 {
 
-    public class EstadoDFA
-    {
-        public EstadoDFA(int numero, object FTrans, bool aceptacion = false, string catLex = null, bool trampa = false)
-        {
-           
-            int num =numero;
-            object ftran = FTrans;
-            bool accept = aceptacion;
-            string catLexica = catLex;
-            bool tramp = trampa;
-            
-        }
-        
-    }
-
-    public class DFALexico{
-        /// <summary>
-        /// clase due describe al automata
-        /// 
+   /*
         /// </summary>
         /// 
         public List<char> alfabeto{get; set;}
@@ -80,4 +57,5 @@ namespace WindowsFormsApplication1
 
         }
     }
+    */
 }
