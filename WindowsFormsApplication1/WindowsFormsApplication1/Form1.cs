@@ -6,6 +6,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+    public class Simbolo
+    {
+        private Tokens token;
+        private Tokens Token { get { return token; } }
+        public Simbolo(Tokens token)
+        {
+            this.token = token;
+        }
+
+    }
     public enum Tokens
     {
         Identificador,
@@ -25,6 +35,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         List<char> alfabeto = new List<char>();
+        List<Simbolo> simbolos = new List<Simbolo>();
         //List<EstadosDFA> estados = new List<EstadosDFA>();
 
  
@@ -100,16 +111,15 @@ namespace WindowsFormsApplication1
        
         private void button2_Click(object sender, EventArgs e)
         {
-            
 
-            foreach (char c in alfabeto)
+            codigo = richTextBox1.Text;
+            textBox1.Text = codigo;
+            Lex a = new Lex(codigo, simbolos);
+             foreach (Simbolo c in simbolos)
             {
                 
                 listBox1.Items.Add(c);
             }
-
-            codigo = richTextBox1.Text;
-            textBox1.Text = codigo;
             
         }
         
@@ -119,23 +129,17 @@ namespace WindowsFormsApplication1
         
         
     }
-    public class Simbolo
+    
+   
+    public class Lex
     {
-        private Tokens token;
-        private Tokens Token { get { return token; } }
-        public Simbolo (Tokens token)
-        {
-            this.token = token;
-        }
-
-    }
-    public class anaLex
-    {
+        private List<Simbolo> simbolos;
         private string textoEntrada;
         private int indice;
         private List<Simbolo> simbolo = new List<Simbolo>();
-        public anaLex(string textoEntrada)
+        public Lex(string textoEntrada, List<Simbolo> simbolos)
         {
+            this.simbolos = simbolos;
             this.textoEntrada = textoEntrada;
             indice = 0;
         }
@@ -157,17 +161,17 @@ namespace WindowsFormsApplication1
                 return c;
             }
         }
-        List<Simbolo> simbolos =new List<Simbolo>();
+        
         public List<Simbolo> GetSimbolos()
         {
             Simbolo simbolo;
-            simbolo=this.GetToken();
-            
-            while(simbolo != Tokens.Termina)
+            simbolo = this.GetToken();
+
+            while (true)
             {
                 simbolos.Add(simbolo);
             }
-            return simbolos;
+            //return simbolos;
         }
 
         public Simbolo GetToken()
