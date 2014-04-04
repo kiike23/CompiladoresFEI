@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
  
@@ -8,14 +9,15 @@ namespace WindowsFormsApplication1
 {
     
 
-    public partial class Form1 : Form
+    public partial class AnaliZator5000 : Form
     {
         List<char> alfabeto = new List<char>();
-        String f = " ";
+        List<Token> TabTokens = new List<Token>();
+        String f = "";
  
         int inicial = 0, indice;
         
-        public Form1()
+        public AnaliZator5000()
         {
             InitializeComponent();
             crearListas();
@@ -165,34 +167,165 @@ namespace WindowsFormsApplication1
         private void button3_Click(object sender, EventArgs e)
         {
             limpiarListbox();
+            crearTablaLexemas();
+            printTablaLexemas();
+                        
+        }
+        public void printTablaLexemas()
+        {
+            foreach(Token t in TabTokens){
+                listBox1.Items.Add(t.lexema+"\t"+t.token+"\t"+t.pos);
+            }
+        }
+        public void crearTablaLexemas()
+        {
             char cActual;
             indice = 0;
-            while (indice <codigo.Length){
+            f = "";
+            TabTokens.Clear();
+            while (indice < codigo.Length)
+            {
                 cActual = GetCaracter();
-                if (cActual == '+') { listBox1.Items.Add(cActual + "\t OPSUMA"); }
-                else if (cActual == '-') { listBox1.Items.Add(cActual + "\t OPSUMA"); }
-                else if (cActual == '*') { listBox1.Items.Add(cActual + "\t OPMULT"); }
-                else if (cActual == '/') { listBox1.Items.Add(cActual + "\t OPMULT"); }
-                else if (cActual == '(') { listBox1.Items.Add(cActual + "\t PAREIZQ"); }
-                else if (cActual == ')') { listBox1.Items.Add(cActual + "\t PAREDER"); }
-                else if (cActual == ';') { listBox1.Items.Add(cActual + "\t FINLINEA"); }
+                if (cActual == '+') { 
+                    //listBox1.Items.Add(cActual + "\t OPSUMA" + "\t" + indice); 
+                    Token t = new Token(Convert.ToString(cActual), "OPSUMA", indice); TabTokens.Add(t); }
+                else if (cActual == '-') {
+                    //listBox1.Items.Add(cActual + "\t OPSUMA" + "\t" + indice);
+                    Token t = new Token(Convert.ToString(cActual), "OPSUMA", indice); TabTokens.Add(t); }
+                else if (cActual == '*') {
+                    //listBox1.Items.Add(cActual + "\t OPMULT" + "\t" + indice); 
+                    Token t = new Token(Convert.ToString(cActual), "OPMULT", indice); TabTokens.Add(t); }
+                else if (cActual == '/') {
+                    //listBox1.Items.Add(cActual + "\t OPMULT" + indice); 
+                    Token t = new Token(Convert.ToString(cActual), "OPMULT", indice); TabTokens.Add(t); }
+                else if (cActual == '(') {
+                    //listBox1.Items.Add(cActual + "\t PAREIZQ" + "\t" + indice);
+                    Token t = new Token(Convert.ToString(cActual), "PAREIZQ", indice); TabTokens.Add(t); }
+                else if (cActual == ')') {
+                    //listBox1.Items.Add(cActual + "\t PAREDER" + "\t" + indice);
+                    Token t = new Token(Convert.ToString(cActual), "PAREDER", indice); TabTokens.Add(t); }
+                else if (cActual == ';') {
+                    //listBox1.Items.Add(cActual + "\t FINLINEA" + "\t" + indice); 
+                    Token t = new Token(Convert.ToString(cActual), "FINLINEA", indice); TabTokens.Add(t); }
                 else if (cActual == ':')
                 {
                     f = Convert.ToString(cActual);
                     cActual = GetCaracter();
-                    if (cActual == '=') { listBox1.Items.Add(f + cActual + "\t ASIGNACION"); f = " "; }
+                    if (cActual == '=') {
+                        //listBox1.Items.Add(f + cActual + "\t ASIGNACION" + "\t" + indice); f = " "; 
+                        Token t = new Token(f, "ASIGNACION", indice); TabTokens.Add(t); }
                 }
-                else//reconecer las palabras
+                else//reconocer las palabras
                 {
+                    if (cActual != (Convert.ToChar(" ")) & cActual != (Convert.ToChar("\t")) & cActual != (Convert.ToChar("\r")) & cActual != (Convert.ToChar("\n")))
+                    {
+                        f = f + cActual;
+                    }
+                    if (cActual == (Convert.ToChar(" ")) | cActual == (Convert.ToChar("\t")) | cActual == (Convert.ToChar("\n")) | cActual == (Convert.ToChar("\r")))
+                    {
+                        if (f == "comienza" )
+                        { 
+                            //listBox1.Items.Add(f + "\t INIT" + "\t" + indice);
+                            Token t = new Token(f, "INIT", indice); TabTokens.Add(t);
+                            f = " ";
+                        }
+                        else if (f == "termina") 
+                        {
+                            //listBox1.Items.Add(f + "\t END" + "\t" + indice);
+                            Token t = new Token(f, "END", indice); TabTokens.Add(t);
+                            f = " ";
+                        }
+                        else if (f == "mod")
+                        {
+                            //listBox1.Items.Add(f + "\t OPMULT" + "\t" + indice);
+                            Token t = new Token(f, "OPMULT", indice); TabTokens.Add(t);
+                            f = " ";
+                        }
+                        else if (f == "rem")
+                        {
+                            //listBox1.Items.Add(f + "\t OPMULT" + "\t" + indice);
+                            Token t = new Token(f, "OPMULT", indice); TabTokens.Add(t);
+                            f = " ";
+                        }
+                        else if (cActual == (Convert.ToChar(" ")))
+                            //DEFINIR SI ES NUMERO O DIGITO
+                        {
+                            if (!alfabeto.Contains(cActual))
+                            {
+                                //listBox1.Items.Add(f + "\t OPMULT" + "\t" + indice);
+                                Token t = new Token(f, "ERROR LEXICO", indice); TabTokens.Add(t);
+                                f = " ";
+                            }
+                            else
+                            {
+                                //listBox1.Items.Add(f + "\tIDENTIFICADOR" + "\t" + indice);
+                                Token t = new Token(f, "IDENTIFICADOR", indice); TabTokens.Add(t);
+                                f = " ";
+                            }
+                        }
+                        
+                        else { continue; }
+
+                    }
 
                     continue;
                 }
+            }
         }
-                        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog textDialog = new SaveFileDialog();
+            textDialog = new SaveFileDialog();
+            textDialog.Filter = "Text Files | *.txt";
+            textDialog.DefaultExt = "txt";
+
+            try
+            {
+                textDialog.ShowDialog();
+                //bool resultado = textDialog.ShowDialog();
+                //if (resultado == true)
+                //{
+                System.IO.Stream fileStream = textDialog.OpenFile();
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(fileStream);
+                String linea = "";
+                foreach (Token t in TabTokens)
+                {
+                    linea += t.lexema + "\t" + t.token + "\t" + t.pos + "\n";
+                    sw.WriteLine(linea);
+                }
+
+                sw.Flush();
+                sw.Close();
+                //}
+            }
+            catch (Exception error) {
+                MessageBox.Show("Ocurrio un error al guardar el archivo :/");
+            }
+
+            
+            
+            
+            
+            
+        
         }
     }
 
-    
+    public class Token
+    {
+        public string lexema;
+        public string token;
+        public int pos;
+        public Token(string lexema, string token, int pos)
+        {
+            this.lexema = lexema;
+            this.token = token;
+            this.pos = pos;
+        }
+
+    }
    
    
     
