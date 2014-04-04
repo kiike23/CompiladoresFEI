@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         List<char> alfabeto = new List<char>();
-       
+        String f = " ";
  
         int inicial = 0, indice;
         
@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
             alfabeto.Add(m = Convert.ToChar("\v"));
             alfabeto.Add(m = Convert.ToChar("\f"));
             alfabeto.Add(m = Convert.ToChar(" "));
-            alfabeto.Add(m = Convert.ToChar("\n"));
+            alfabeto.Add(m = Convert.ToChar("\n")); //salto de linea
             alfabeto.Add(m = Convert.ToChar("\t"));
             
              
@@ -128,8 +128,9 @@ namespace WindowsFormsApplication1
             char cActual;
             indice =0;
             limpiarListbox();
+            int numero;
             bool b = true;
-
+            
 
             while (indice<codigo.Length)
             {
@@ -150,27 +151,44 @@ namespace WindowsFormsApplication1
                         b = false;
                         if ((cActual != '\t') || (cActual != '\n') || (cActual != '\v') || (cActual != '\f'))
                         {
-                            listBox1.Items.Add(cActual + "\tEs un caracter no valido");
+                            listBox1.Items.Add(cActual + "\tEs un caracter no valido, Pos: "+ indice);
                         }
                     }
                 }
             }
                 if (b == true) { textBox1.Text="Codigo aprobado";}
                 else { textBox1.Text = "Error existen caracteres no validos"; }
-               
-                        
-                    
-                
-
-            
-                
-                    
+                f = "";           
                         
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            limpiarListbox();
+            char cActual;
+            indice = 0;
+            while (indice <codigo.Length){
+                cActual = GetCaracter();
+                if (cActual == '+') { listBox1.Items.Add(cActual + "\t OPSUMA"); }
+                else if (cActual == '-') { listBox1.Items.Add(cActual + "\t OPSUMA"); }
+                else if (cActual == '*') { listBox1.Items.Add(cActual + "\t OPMULT"); }
+                else if (cActual == '/') { listBox1.Items.Add(cActual + "\t OPMULT"); }
+                else if (cActual == '(') { listBox1.Items.Add(cActual + "\t PAREIZQ"); }
+                else if (cActual == ')') { listBox1.Items.Add(cActual + "\t PAREDER"); }
+                else if (cActual == ';') { listBox1.Items.Add(cActual + "\t FINLINEA"); }
+                else if (cActual == ':')
+                {
+                    f = Convert.ToString(cActual);
+                    cActual = GetCaracter();
+                    if (cActual == '=') { listBox1.Items.Add(f + cActual + "\t ASIGNACION"); f = " "; }
+                }
+                else//reconecer las palabras
+                {
 
+                    continue;
+                }
+        }
+                        
         }
     }
 
