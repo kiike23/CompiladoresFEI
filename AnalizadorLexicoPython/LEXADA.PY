@@ -27,9 +27,9 @@ t_FINLINEA = r';'
 t_IPAREN = r'\('
 t_DPAREN  = r'\)'
 #\W Equivle a [a-zA-Z0-9]
-t_ID = r'\w+(\d\w)*'
+t_ID = r'[a-zA-Z]+(\d\w)*'
 # \d Equivale a [0-9]
-t_ENTEROS = r'\d+'
+t_ENTEROS = r'\d+^w'
 #\s 	Cualquier carácter en blanco. Equivale a [ \t\n\r\f\v]
 t_ESPACIOS = '\s+'  
 
@@ -44,7 +44,7 @@ def t_newline(t):
 	t.lexer.lineno += len(t.value)
 
 def t_error(t):
-	print "Lexical error: " + str(t.value[0])
+	print "Error lexico: " + str(t.value[0])
 	t.lexer.skip(1)
 
 def prueba(data, lexer):
