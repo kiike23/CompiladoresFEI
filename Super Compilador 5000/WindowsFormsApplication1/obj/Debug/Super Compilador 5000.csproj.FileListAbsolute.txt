@@ -1,0 +1,51 @@
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AnaliZator5000.resources
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\StarKiller\Desktop\final\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AnaliZator5000.resources
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+E:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csprojResolveAssemblyReference.cache
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csprojResolveAssemblyReference.cache
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AnaliZator5000.resources
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+F:\Dropbox\UV\Compiladores\Equipo compi\Proyecto 1\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csprojResolveAssemblyReference.cache
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AnaliZator5000.resources
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
