@@ -49,3 +49,16 @@ C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\D
 C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
 C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
 C:\Users\StarKiller\Desktop\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csprojResolveAssemblyReference.cache
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AnaliZator5000.resources
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\Super Compilador 5000.csproj.GenerateResource.Cache
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application

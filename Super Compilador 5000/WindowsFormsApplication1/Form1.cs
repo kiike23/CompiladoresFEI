@@ -78,26 +78,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create an OpenFileDialog object.
-            OpenFileDialog archivo = new OpenFileDialog();
-
-            // Initialize the filter to look for text files.
-            archivo.Filter = "Archivos AdaMini|*.txt";
-
-            // If the user selected a file, load its contents into the RichTextBox.
-            try
-            {
-                if (archivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    richTextBox1.LoadFile(archivo.FileName,
-                    RichTextBoxStreamType.PlainText);
-                System.IO.StreamReader objReader;
-                objReader = new
-                System.IO.StreamReader(archivo.OpenFile());
-                codigo =
-                objReader.ReadToEnd();
-                archivo.Dispose();
-            }
-            catch { Exception r; }
+           
 
             
            
@@ -106,9 +87,7 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, EventArgs e)
         {
 
-            codigo = richTextBox1.Text;
             
-            comprobar();
             
         }
 
@@ -363,6 +342,78 @@ namespace WindowsFormsApplication1
             
             
         
+        }
+
+       
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Create an OpenFileDialog object.
+            OpenFileDialog archivo = new OpenFileDialog();
+
+            // Initialize the filter to look for text files.
+            archivo.Filter = "Archivos AdaMini|*.txt";
+
+            // If the user selected a file, load its contents into the RichTextBox.
+            try
+            {
+                if (archivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    richTextBox1.LoadFile(archivo.FileName,
+                    RichTextBoxStreamType.PlainText);
+                System.IO.StreamReader objReader;
+                objReader = new
+                System.IO.StreamReader(archivo.OpenFile());
+                codigo =
+                objReader.ReadToEnd();
+                archivo.Dispose();
+            }
+            catch { Exception r; }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            codigo = richTextBox1.Text;
+
+            comprobar();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            limpiarListbox();
+            crearTablaLexemas();
+            printTablaLexemas();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog textDialog = new SaveFileDialog();
+            textDialog = new SaveFileDialog();
+            textDialog.Filter = "Tabla de lexemas | *.txt";
+            textDialog.DefaultExt = "txt";
+
+            try
+            {
+                textDialog.ShowDialog();
+                //bool resultado = textDialog.ShowDialog();
+                //if (resultado == true)
+                //{
+                System.IO.Stream fileStream = textDialog.OpenFile();
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(fileStream);
+                String linea = "";
+                foreach (Token t in TabTokens)
+                {
+                    linea = t.lexema + "\t" + t.token + "\t" + t.pos + "\n";
+                    sw.WriteLine(linea);
+                }
+
+                sw.Flush();
+                sw.Close();
+                //}
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrio un error al guardar el archivo :/");
+            }
         }
     }
 
