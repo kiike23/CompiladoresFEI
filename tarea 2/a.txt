@@ -1,0 +1,14 @@
+
+
+comienza
+	gh := 		b3;
+mod;
+
+5555lklkl
+b := 99 rem (66 - g4);	
+	mod;
+	xyz := a + b + c
+	-p / q;
+	a := xyz * (p + q);
+	p := a - xyz - p;
+termina
