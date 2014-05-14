@@ -1,0 +1,7 @@
+S,M,N
+z,a,b
+S,z,M,Nz
+M,a,M,a
+M,z
+M,b,N,b
+N,z
