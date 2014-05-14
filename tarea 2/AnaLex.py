@@ -14,18 +14,39 @@ digitos = [str(c) for c in range(0,10)]
 def crearTabla(cat):
 	t=()
 	for p in palabras:
-		
-		if cat.has_key(p):
+		if (p == ""):
+			pass
+		elif cat.has_key(p):
 			t=(p,cat.get(p))
 			TablaLex.append(t)
 		
 		else:
-			t=(p,'Identificador')
-			TablaLex.append(t)
-		"""elif p[1] in digitos:	
-			t=(p,'Entero')
-			TablaLex.append(t)
-		"""
+			if (p[0] in digitos):
+				i=0
+				cad=''
+				while (i < len(p)):
+					c=p[i]
+					if (c in digitos):
+						cad+=c
+						i+=1
+					else:
+						t=(cad,'entero')
+						TablaLex.append(t)
+						cad=''
+						t=(p[i:],'identificador')
+						TablaLex.append(t)
+						break
+				if cad !='':
+					t=(cad,'entero')
+					TablaLex.append(t)
+			else:
+				t=(p,'identificador')
+				TablaLex.append(t)
+				
+						
+					
+				
+		
 		t=()
 def obtPal(l,x):
 	"""
@@ -75,6 +96,7 @@ if __name__ == '__main__':
 				codigo +=(linea)
 			else:
 				pass
+		a.close()
 		
 	except:
 		print "error de lectura|"
