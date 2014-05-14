@@ -62,3 +62,6 @@ C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\b
 C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
 C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
 C:\Repositorios\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+C:\Repo\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Repo\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Repo\CompiladoresFEI\Super Compilador 5000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
