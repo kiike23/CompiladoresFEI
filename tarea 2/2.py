@@ -161,7 +161,7 @@ def impDescrp():
 	print terminales
 	
 	print reglas
-	print cadEval
+	print inicial
 	
 if __name__ == '__main__':
 	cadEval = sys.argv[2]

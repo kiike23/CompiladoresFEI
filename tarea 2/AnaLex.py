@@ -78,7 +78,7 @@ if __name__ == '__main__':
 		
 	except:
 		print "error de lectura|"
-	print cat
+	
 	obtPal(codigo,palabras)
 	crearTabla(cat)
 	print TablaLex	
