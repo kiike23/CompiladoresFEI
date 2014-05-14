@@ -12,17 +12,17 @@ arch=[]
 funciones de creacion de diccionarios e iniciacion de variables
 """
 def cargarElementos():
-    """
-    funcion de lectura de archivo
-    -se leen terminales, noTerminales y las reglas
-    """
-    
-    noTerminales.append(leerLinea(arch[0]))
-    #leer terminales
-    terminales.append(leerLinea(arch[1]))
-    #leer inicial
-    inicial.append(leerLinea(arch[2]))
-    #leer reglas
+	"""
+	funcion de lectura de archivo
+	-se leen terminales, noTerminales y las reglas
+	"""
+
+	noTerminales.append(leerLinea(arch[0]))
+	#leer terminales
+	terminales.append(leerLinea(arch[1]))
+	#leer inicial
+	inicial.append(leerLinea(arch[2]))
+	#leer reglas
     
 def leerLinea(l):
 	"""
@@ -48,13 +48,15 @@ def leerReglas():
 	l=arch[3:]
 	#eliminar comas y espacios
 	for li in l:
-        for c in li:
-            if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
-                cad +=c
-            else:
-                x.append(cad)
-        t.append(x)
-    print t
+	    for c in li:
+	
+			if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
+			    cad +=c
+			else:
+				x.append(cad)
+				cad=''
+		t.append(x)
+	print t
 
 def impDescrp():
 	print "="*80
