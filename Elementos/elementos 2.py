@@ -4,32 +4,27 @@ Gramatica
 """
 terminales = []
 noTerminales = []
-inicial = ""
+inicial = []
 reglas = {}
 tmp =[]
-
+arch=[]
 """
 funciones de creacion de diccionarios e iniciacion de variables
 """
-def leerArchivo(archivo):
+def cargarElementos():
     """
     funcion de lectura de archivo
     -se leen terminales, noTerminales y las reglas
     """
-    a.open(sys.argv[1], 'r')
-    #leer no terminales
-    leerLineas(a.readline(),noTerminales)
+    
+    noTerminales.append(leerLinea(arch[0]))
     #leer terminales
-    leerLineas(a.readline(),terminales)
+    terminales.append(leerLinea(arch[1]))
     #leer inicial
-    leerLineas(a.readline(),inicial)
+    inicial.append(leerLinea(arch[2]))
     #leer reglas
-    linea = a.readline()
-    while  linea != "":
-        leerReglas(linea,reglas)
-        linea = a.readline()
-    a.close()
-def leerLineas(l,x):
+    
+def leerLinea(l):
 	"""
 	leerLineas: recibe 2 parametros,
 	el primero es la linea del archivo de text
@@ -37,63 +32,48 @@ def leerLineas(l,x):
 	
 	"""
 	cad = ""
+	x = []
 	for c in l:
 		if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
 			x.append(c)
 		else:
 			pass
 	return x
-def leerReglas(l,r,t):
+def leerReglas():
 	s=""
 	cad = ""
+	x = []
 	t=[]
 	r={}
+	l=arch[3:]
 	#eliminar comas y espacios
-	for c in l:
-		if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
-			cad +=c
-		else:
-			pass
-	# validar que el primer elemento sea noTermina
-	#gusardarlo como regla y el resto en una lista
-	b= 0
-	for c in cad:
-		if b == 0:
-			if (c in noTerminales):
-				s=c
-				b=1
-			else:
-				print "Error %s no es un noTerminal" %(c)
-		else: #ya se obtuvo la regla
-			if ((c in terminales) or (c in noTerminales) or (c == '0')):
-				t.append(c)
-			else:
-				print "Error %s no es un caracter no valido" %(c)
-	reglas.__setitem__(s,t)
-	
+	for li in l:
+        for c in li:
+            if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
+                cad +=c
+            else:
+                x.append(cad)
+        t.append(x)
+    print t
+
 def impDescrp():
 	print "="*80
-	
-	print noTerminales
-	print terminales
-	
-	print reglas
-	print inicial
+	print 'No terminales: %s ;'%noTerminales
+	print 'Terminales: %s ;'%terminales
+	print 'Inicial: %s ;'%inicial
+	print 'Reglas: %s ;'%reglas
 
+def cargarArchivo(archivo):
+    a = open(archivo,'r')
+    for l in a:
+       arch.append(l)
+    a.close
+    
 if __name__ == '__main__':
-   
     archivo = sys.argv[1]
-    a.open(sys.argv[1], 'r')
-    #leer no terminales
-    leerLineas(a.readline(),noTerminales)
-    #leer terminales
-    leerLineas(a.readline(),terminales)
-    #leer inicial
-    leerLineas(a.readline(),inicial)
-    #leer reglas
-    linea = a.readline()
-    while  linea != "":
-        leerReglas(linea,reglas)
-        linea = a.readline()
-    a.close()
-    impoDescrip()
+    #
+    cargarArchivo(archivo)
+    
+    cargarElementos()
+    impDescrp()
+    print arch
