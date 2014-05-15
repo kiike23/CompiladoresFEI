@@ -17,13 +17,13 @@ def cargarElementos():
 	-se leen terminales, noTerminales y las reglas
 	"""
 
-	noTerminales.append(leerLinea(arch[0]))
+	noTerminales.extend(leerLinea(arch[0]))
 	#leer terminales
-	terminales.append(leerLinea(arch[1]))
+	terminales.extend(leerLinea(arch[1]))
 	#leer inicial
-	inicial.append(leerLinea(arch[2]))
+	inicial.extend(leerLinea(arch[2]))
 	#leer reglas
-    
+
 def leerLinea(l):
 	"""
 	leerLineas: recibe 2 parametros,
@@ -42,21 +42,28 @@ def leerLinea(l):
 def leerReglas():
 	s=""
 	cad = ""
-	x = []
+	
 	t=[]
 	r={}
 	l=arch[3:]
 	#eliminar comas y espacios
 	for li in l:
-	    for c in li:
-	
-			if ((c != ',') and (c != ' ') and (c != '\n') and (c != '\t')):
-			    cad +=c
+		x = []
+		for c in li:
+			if ((c != ',') and (c != ' ')and (c != '') and (c != '\n') and (c != '\t')):
+				cad +=c
 			else:
 				x.append(cad)
 				cad=''
 		t.append(x)
-	print t
+	
+	for nt in  noTerminales:
+		x=[]
+		
+		for r in t:
+			if (nt == r[0]):
+				x.append(r[1:])
+		reglas.__setitem__(nt,x)
 
 def impDescrp():
 	print "="*80
@@ -70,12 +77,11 @@ def cargarArchivo(archivo):
     for l in a:
        arch.append(l)
     a.close
-    
+
 if __name__ == '__main__':
     archivo = sys.argv[1]
     #
     cargarArchivo(archivo)
-    
     cargarElementos()
+    leerReglas()
     impDescrp()
-    print arch
